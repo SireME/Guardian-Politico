@@ -1,2 +1,2 @@
 # Guardian-Politico
-Udacity Android Basics Final Project Submission
+Final project submission QuizeApp Udacity Android Basics Nanodegree
