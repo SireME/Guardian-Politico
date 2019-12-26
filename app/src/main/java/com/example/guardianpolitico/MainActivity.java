@@ -115,7 +115,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         uriBuilder.appendQueryParameter("order-by", "newest");
         uriBuilder.appendQueryParameter("from-date", "2019-01-01");
         uriBuilder.appendQueryParameter("api-key", "cf24b873-4482-4393-8657-c865bfacf91c");
+        uriBuilder.appendQueryParameter("show-tags","contributor");
 
+        Log.d("URITEST",uriBuilder.toString());
 
         // Return the completed uri `https://content.guardianapis.com/politics?order-by=newest&api-key=cf24b873-4482-4393-8657-c865bfacf91c
         return new NewsLoader(this, uriBuilder.toString());

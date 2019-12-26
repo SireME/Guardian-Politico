@@ -19,18 +19,25 @@ public class News {
      */
     private String mDate;
 
+      // publisher name/author
+    private String mAuthor;
+
+
+
     /**
+     *
      * Create a new Info object.
      *
      * @param title   is the title of article
      * @param section is the section where the article belongs
      * @param date    this is the date article was published
      */
-    public News(String title, String section, String date, String url) {
+    public News(String title, String section, String date, String url,String author) {
         mTitle = title;
         mArticleSection = section;
         mDate = date;
         mUrl = url;
+        mAuthor = author;
     }
 
     /**
@@ -59,5 +66,12 @@ public class News {
      */
     public String getUrl() {
         return mUrl;
+    }
+
+    /**
+     * Get the author of the article
+     */
+    public String getAuthor() {
+        return mAuthor;
     }
 }

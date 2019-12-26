@@ -48,6 +48,12 @@ public class NewsAdapter extends ArrayAdapter {
         // set this text on the number TextView
         dateTextView.setText(currentNewsAdapter.getDate());
 
+        // Find the TextView in the list_item.xml layout with the author
+        TextView authorTextView = (TextView) listItemView.findViewById(R.id.author_text_view);
+        // Get the article date from the current News object and
+        // set this text on the number TextView
+        authorTextView.setText(currentNewsAdapter.getAuthor());
+
 
         return listItemView;
     }

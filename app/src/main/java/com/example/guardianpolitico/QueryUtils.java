@@ -130,15 +130,22 @@ public final class QueryUtils {
 
             // Extract the JSONobject associated with the key called "response",
             JSONObject base1 = baseJsonResponse.getJSONObject("response");
+
+
             // Extract the JSONarray associated with the key called "results",
             // which represents a list of features (or political news articles).
             JSONArray newsArray = base1.getJSONArray("results");
+
 
             // For each article in the newsArray, create a {@link News} object
             for (int i = 0; i < newsArray.length(); i++) {
 
                 // Get a single article at position i within the list of newsarticles
                 JSONObject currentNews = newsArray.getJSONObject(i);
+
+                JSONObject tagArray = currentNews.getJSONObject("tags");
+                  //trying to extract the author from the tags array with key webTitle
+                String author = tagArray.getString("webTitle");
 
 
                 // Extract the value for the key called "webTitle"
@@ -155,7 +162,7 @@ public final class QueryUtils {
 
                 // Create a new {@link News} object with the magnitude, location, time,
                 // and url from the JSON response.
-                News newsContents = new News(title, sectionName, date, url);
+                News newsContents = new News(title, sectionName, date, url,author);
 
                 // Add the new {@link News} to the list of articles.
                 news.add(newsContents);
